@@ -8,11 +8,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 </head>
 <body>
+<?php
+ require_once "navbar.php"
+?>
+<main class="container">
   <?php
     if(!isset($_GET['code'])){
-      echo '<div class="container">
+      echo '<div class="container ">
       <form method="POST">
-       <div class="mt-3">EMAIL:</div>
+       <div class="mt-3 shadow p-2 mb-1">EMAIL:</div>
         <input class="form-control" type="email" name="mail"  require><br> 
        <button class="btn btn-success mt-3 " type="submit" name="click">Send</button>   
       </form>
@@ -20,7 +24,7 @@
     }else if(isset($_GET['code'])&& isset($_GET['email'])){
       echo '<div class="container">
             <form method="POST">   
-             <div class="mt-3"> NEW PASSWORD :</div>
+             <div class="mt-3 shadow"> NEW PASSWORD :</div>
              <input class="form-control" type="text" name="password"  require><br>
              <button class="btn btn-success mt-3 " type="submit" name="updato">UPDATE PASS</button>  
            </form>
@@ -88,8 +92,8 @@ if(isset($_POST['click'])){
 
  }
  }
-
+ 
 ?>
-    
+ </main>   
 </body>
 </html>
